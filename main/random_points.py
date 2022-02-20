@@ -1,6 +1,7 @@
+from numbers import Number
 import random
 
-def random_points(n: int, dim: int = 2, ranges: [(int, int)] = None):
+def random_points(n: int, dim: int = 2, ranges: [(Number, Number)] = None):
     if ranges == None:
         ranges = [(0,1)] * dim
     elif len(ranges) < dim:

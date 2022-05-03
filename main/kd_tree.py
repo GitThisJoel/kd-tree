@@ -1,27 +1,21 @@
 from random_points import random_points
 
+from dataclasses import dataclass
+from typing import TypeVar
+
+Node = TypeVar('Node')
+
+@dataclass
 class Node:
-    def __init__(self, value, left, right):
-        self.value = value
-        self.right = right
-        self.left = left
+    value: int
+    left: Node = None
+    right: Node = None
 
-    def __str__(self):
-        l0 = f"  {self.value}"
-        if not (self.right == None or self.left == None):
-            l1 = " / \ "
-            l2 = f"{self.left.value}  {self.right.value}"
-        elif self.left == None:
-            l1 = "   \ "
-            l2 = f"      {self.right.value}"
-        elif self.left == None:
-            l1 = " /     "
-            l2 = f"{self.left.value}"
-        return f"{l0}\n{l1}\n{l2}"
+def create_kd_tree(points, depth):
+    return
 
-
-n1 = Node(3, None, None)
-n2 = Node(14, None, None)
-n3 = Node(7, n1, n2)
-
-print(n3)
+if __name__ == "__main__":
+    a = Node(10)
+    b = Node(20)
+    c = Node(value=30, left=a, right=b)
+    print(c)
